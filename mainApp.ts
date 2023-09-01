@@ -3,11 +3,6 @@ import express, { Application, NextFunction, Request, Response} from "express";
 import { HTTP, mainError } from "./error/mainError";
 import { errorHandler } from "./error/handleError";
 import ecommerce from "./router/ecommerce";
-import user from "./router/UserRouter";
-
-
-
-
 
 export const mainApp = (app: Application) => {
     app.use(express.json());
@@ -21,7 +16,7 @@ export const mainApp = (app: Application) => {
 
      app.use(express.json());
      app.use("/api/v1", ecommerce)
-     app.use("/api/v1", user)
+   
 
     app.get("/",(req: Request, res: Response) => {
         res.status(HTTP.OK).json({

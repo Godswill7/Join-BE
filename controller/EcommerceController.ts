@@ -23,8 +23,10 @@ export const getProducts = async (req: Request, res: Response) => {
 
 
 export const createProduct = async (req: Request, res: Response) => {
-    try {
-      const { title, cost, image , rate} = req.body;
+  try {
+      
+      const { title, cost, image, rate } = req.body;
+      
     const product = await prisma.ecommerce.create({
         data: { title, cost, image, rate},
       });
@@ -32,9 +34,10 @@ export const createProduct = async (req: Request, res: Response) => {
         message: "create Product",
         data: product,
       });
-    } catch (error) {
+    } catch (error:any) {
       return res.status(HTTP.BAD_REQUEST).json({
-        message: error,
+        message: error.message,
+        
       });
     }
   };

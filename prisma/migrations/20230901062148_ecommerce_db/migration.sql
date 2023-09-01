@@ -1,7 +1,7 @@
 -- CreateTable
 CREATE TABLE "ecommerce" (
     "id" TEXT NOT NULL,
-    "cost" INTEGER NOT NULL,
+    "cost" TEXT NOT NULL,
     "title" TEXT NOT NULL,
     "image" TEXT NOT NULL,
     "rate" TEXT NOT NULL,

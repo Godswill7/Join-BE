@@ -10,7 +10,7 @@ mainApp(app);
 
 const server = app.listen(port, () => {
   console.log();
-  console.log("server connected 💥💌");
+  console.log("server connected 💥💌", port);
 });
 
 process.on("uncaughtException", (error: Error) => {
